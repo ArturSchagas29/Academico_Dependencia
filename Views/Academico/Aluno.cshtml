@@ -1,0 +1,93 @@
+﻿@model Academico_Dependencia.Models.Aluno
+@{
+    ViewData["Title"] = "Aluno";
+}
+
+<h3>Cadastro de Aluno</h3>
+<h4>Aluno</h4>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <form method="post">
+            @Html.AntiForgeryToken()
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="Nome" class="control-label">Nome</label>
+                    <input asp-for="Nome" type="text" class="form-control" placeholder="Nome do Aluno">
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label">Email</label>
+                    <input asp-for="Email" type="email" class="form-control" placeholder="Email">
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Telefone" class="control-label">Telefone</label>
+                    <input asp-for="Telefone" type="text" class="form-control" placeholder="Telefone">
+                    <span asp-validation-for="Telefone" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Endereco" class="control-label">Endereco</label>
+                    <input asp-for="Endereco" type="text" class="form-control" placeholder="Endereço">
+                    <span asp-validation-for="Endereco" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Complemento" class="control-label">Complemento</label>
+                    <input asp-for="Complemento" type="text" class="form-control" placeholder="Complemento">
+                </div>
+                <div class="form-group">
+                    <label asp-for="Bairro" class="control-label">Bairro</label>
+                    <input asp-for="Bairro" type="text" class="form-control" placeholder="Bairro">
+                    <span asp-validation-for="Bairro" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Municipio" class="control-label">Municipio</label>
+                    <input asp-for="Municipio" type="text" class="form-control" placeholder="Município">
+                    <span asp-validation-for="Municipio" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Uf" class="control-label">Uf</label>
+                    <select asp-for="Uf" class="form-control">
+                        <option value="">Selecione o Estado</option>
+                        <option value="AC">Acre</option>
+                        <option value="AL">Alagoas</option>
+                        <option value="AP">Amapá</option>
+                        <option value="AM">Amazonas</option>
+                        <option value="BA">Bahia</option>
+                        <option value="CE">Ceará</option>
+                        <option value="DF">Distrito Federal</option>
+                        <option value="ES">Espírito Santo</option>
+                        <option value="GO">Goiás</option>
+                        <option value="MA">Maranhão</option>
+                        <option value="MT">Mato Grosso</option>
+                        <option value="MS">Mato Grosso do Sul</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="PA">Pará</option>
+                        <option value="PB">Paraíba</option>
+                        <option value="PR">Paraná</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="PI">Piauí</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="RN">Rio Grande do Norte</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="RO">Rondônia</option>
+                        <option value="RR">Roraima</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="SE">Sergipe</option>
+                        <option value="TO">Tocantins</option>
+                    </select>
+                    <span asp-validation-for="Uf" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Cep" class="control-label">Cep</label>
+                    <input asp-for="Cep" type="text" class="form-control" placeholder="CEP">
+                    <span asp-validation-for="Cep" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-success" value="Gravar" />
+                    <a asp-action="Index" class="btn btn-info">Retornar a lista de Alunos</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
