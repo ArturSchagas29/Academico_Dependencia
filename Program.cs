@@ -1,9 +1,15 @@
 using Academico_Dependencia.Repositories;
+using Academico_Dependencia.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<AcademicoContext>(options =>
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("AcademicoConnection")));
 
 builder.Services.AddSingleton<IAlunoRepository, InMemoryAlunoRepository>();
 
@@ -26,6 +32,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Contact}/{id?}");
 
 app.Run();
